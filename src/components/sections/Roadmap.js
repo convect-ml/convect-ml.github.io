@@ -63,13 +63,13 @@ class Roadmap extends React.Component {
               <TimelineItem title="December 2019">
                 Deployed a high-quality first release and conducted a market validation test
               </TimelineItem>
-              <TimelineItem title="January 2020">
+              <TimelineItem title="January 2021">
                 Deployed a high-quality first release and conducted a market validation test
               </TimelineItem>
-              <TimelineItem title="February 2020">
+              <TimelineItem title="February 2021">
                 Deployed a high-quality first release and conducted a market validation test
               </TimelineItem>
-              <TimelineItem title="March 2020">
+              <TimelineItem title="March 2021">
                 Deployed a high-quality first release and conducted a market validation test
               </TimelineItem>
             </Timeline>

@@ -46,7 +46,7 @@ class Footer extends React.Component {
               <div className="footer-blocks">
                 <div className="footer-block">
                   <Logo className="mb-16" />
-                  <div className="footer-copyright">&copy; 2020 Convect Inc.</div>
+                  <div className="footer-copyright">&copy; 2021 Convect Inc.</div>
                 </div>
                 <div className="footer-block">
                   <div className="footer-block-title">Company</div>
