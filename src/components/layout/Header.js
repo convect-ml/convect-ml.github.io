@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Logo from './partials/Logo';
-import TypeformButton from '../layout/partials/TypeformButton';
+import Button from '../elements/Button';
 
 const propTypes = {
   active: PropTypes.bool,
@@ -133,7 +133,7 @@ class Header extends React.Component {
                         className="list-reset header-nav-right"
                       >
                         <li>
-                          <TypeformButton size="sm" />
+                        <Button tag="a" color="primary" wideMobile href="https://app.convect.ml/" size="sm">Try Convect now</Button>
                         </li>
                       </ul>}
                   </div>

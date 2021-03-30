@@ -22,8 +22,8 @@ const TypeformButton = ({
   }
 
   return (
-    <Button tag="a" color="primary" wideMobile onClick={openTypeform} {...props}>
-      Request early access
+    <Button tag="a" color="primary" wide onClick={openTypeform} {...props}>
+      Contact us for information
     </Button>
   );
 }

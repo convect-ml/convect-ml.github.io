@@ -63,7 +63,7 @@ class Home extends React.Component {
             videoTag="iframe" />
         </GenericSection>        
         {/* <FeaturesSplit invertMobile topDivider imageFill /> */}
-        {/* <Pricing topDivider pricingSwitcher /> */}
+        <Pricing />
         <Cta split />
       </React.Fragment>
     );

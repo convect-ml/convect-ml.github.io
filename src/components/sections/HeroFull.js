@@ -60,7 +60,7 @@ class HeroFull extends React.Component {
                 faster.
                 </p>
                 <div className="reveal-from-bottom" data-reveal-delay="600">
-                  <TypeformButton />
+                <Button tag="a" color="primary" wideMobile href="https://app.convect.ml/">Try Convect now</Button>
                 </div>
               </div>
             </div>
