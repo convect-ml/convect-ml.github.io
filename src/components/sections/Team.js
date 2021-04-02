@@ -50,7 +50,7 @@ class Team extends React.Component {
 
     const sectionHeader = {
       title: 'Meet the team',
-      paragraph: 'Convect is founded by <a href="https://www.linkedin.com/in/sameerank/">Sameeran Kunche</a>. Sameeran was formerly a senior data scientist at Intuit, where he automated and simplified ML workflows to keep pace with tight timeline goals, shepherding new NLP models from requirements gathering to production in the span of two weeks, and to deploy at scale, i.e. over a million transaction categorization models personalized to each customer. Prior to Intuit, Sameeran worked as a software engineer at Synthego to accelerate workflows in laboratories by building better user experiences. Convect is the synthesis of these experiences and is designed to empower data scientists to deliver more value faster.'
+      paragraph: 'Convect is founded by <a href="https://www.linkedin.com/in/sameerank/">Sameeran Kunche</a>. Sameeran was formerly a senior data scientist at <a href="https://www.intuit.com/">Intuit</a>, where he automated and simplified ML workflows to keep pace with tight timeline goals, e.g. deploying new NLP models to production on a biweekly cadence, and to deploy at scale, i.e. over a million transaction categorization models personalized to each customer. Prior to Intuit, Sameeran worked as a software engineer at <a href="https://www.synthego.com/">Synthego</a> to accelerate workflows in laboratories by building better user experiences. Convect is the synthesis of these experiences and is designed to empower data scientists to deliver more value faster.'
     };
 
     return (

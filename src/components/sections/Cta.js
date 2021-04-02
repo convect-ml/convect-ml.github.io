@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
-import TypeformButton from '../layout/partials/TypeformButton';
+import Button from '../elements/Button';
 
 const propTypes = {
   ...SectionProps.types,
@@ -60,7 +60,7 @@ class Cta extends React.Component {
               </h3>
             </div>
             <div className="cta-action">
-              <TypeformButton />
+              <Button tag="a" color="primary" wide href="https://app.convect.ml/">Try Convect now</Button>
             </div>
           </div>
         </div>

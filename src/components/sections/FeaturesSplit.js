@@ -54,8 +54,8 @@ class FeaturesSplit extends React.Component {
     );
 
     const sectionHeader = {
-      title: 'Built for your workflow',
-      paragraph: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint — occaecat cupidatat non proident, sunt in culpa qui.'
+      title: 'Built for typical data science workflows',
+      paragraph: 'Do it all in Python, all in your notebook, using common data science tools.'
     };
 
     return (
@@ -71,10 +71,10 @@ class FeaturesSplit extends React.Component {
               <div className="split-item">
                 <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
                   <h3 className="mt-0 mb-12">
-                    Elements Management
+                    1. Train a model
                   </h3>
                   <p className="m-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua — Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Using tools like Python, scikit-learn, and pandas, and do all your model training in a Jupyter notebook or your favorite text editor.
                   </p>
                 </div>
                 <div className={
@@ -85,7 +85,7 @@ class FeaturesSplit extends React.Component {
                   data-reveal-container=".split-item">
                   <Image
                     className="has-shadow"
-                    src={require('./../../assets/images/features-split-image-01.png')}
+                    src={require('./../../assets/images/model-train.gif')}
                     alt="Features split 01"
                     width={528}
                     height={396} />
@@ -95,10 +95,10 @@ class FeaturesSplit extends React.Component {
               <div className="split-item">
                 <div className="split-item-content center-content-mobile reveal-from-right" data-reveal-container=".split-item">
                   <h3 className="mt-0 mb-12">
-                    Elements Management
+                    2. Deploy the model instantly with Convect
                   </h3>
                   <p className="m-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua — Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    In exactly one click, create an endpoint from your model that you can share with the world.
                   </p>
                 </div>
                 <div className={
@@ -109,7 +109,7 @@ class FeaturesSplit extends React.Component {
                   data-reveal-container=".split-item">
                   <Image
                     className="has-shadow"
-                    src={require('./../../assets/images/features-split-image-02.png')}
+                    src={require('./../../assets/images/model-deploy.gif')}
                     alt="Features split 02"
                     width={528}
                     height={396} />
@@ -119,10 +119,10 @@ class FeaturesSplit extends React.Component {
               <div className="split-item">
                 <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
                   <h3 className="mt-0 mb-12">
-                    Elements Management
+                    3. Make predictions from anywhere
                   </h3>
                   <p className="m-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua — Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    In any language. From any computer with an internet connection.
                   </p>
                 </div>
                 <div className={
@@ -133,7 +133,7 @@ class FeaturesSplit extends React.Component {
                   data-reveal-container=".split-item">
                   <Image
                     className="has-shadow"
-                    src={require('./../../assets/images/features-split-image-03.png')}
+                    src={require('./../../assets/images/model-predict.gif')}
                     alt="Features split 03"
                     width={528}
                     height={396} />

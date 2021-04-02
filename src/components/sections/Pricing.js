@@ -185,7 +185,7 @@ class Pricing extends React.Component {
                         <li className="is-checked">Up to 15 minutes per prediction execution</li>
                         <li className="is-checked">A Python 3 environment preset</li>
                         <li className="is-checked">Customizable Python environments</li>
-                        <li className="is-checked">Access control for prediction APIs</li>
+                        <li className="is-checked">Access control for predictions</li>
                       </ul>
                     </div>
                   </div>

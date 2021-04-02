@@ -31,15 +31,16 @@ class Home extends React.Component {
   render() {
 
     const genericSection01Header = {
-      title: 'Deploy from anywhere and collaborate with minimal effort'
+      title: 'Watch a demo'
     }
 
     return (
       <React.Fragment>
         <HeroFull className="illustration-section-01" />
         {/* <Clients topDivider bottomDivider /> */}
-        <FeaturesTiles topDivider />
-        <GenericSection topDivider className="center-content">
+        <FeaturesSplit invertMobile topDivider imageFill />
+        {/* <FeaturesTiles topDivider /> */}
+        {/* <GenericSection topDivider className="center-content">
           <SectionHeader data={genericSection01Header} className="reveal-from-bottom" />
           <div className="reveal-from-bottom">
             <a
@@ -61,9 +62,8 @@ class Home extends React.Component {
             handleClose={this.closeModal}
             video="https://www.loom.com/embed/9136ceac56fb4efd8b301f79676ad8ee"
             videoTag="iframe" />
-        </GenericSection>        
-        {/* <FeaturesSplit invertMobile topDivider imageFill /> */}
-        <Pricing />
+        </GenericSection>         */}
+        <Pricing topDivider />
         <Cta split />
       </React.Fragment>
     );
