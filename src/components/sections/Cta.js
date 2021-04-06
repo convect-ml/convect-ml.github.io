@@ -56,7 +56,7 @@ class Cta extends React.Component {
           >
             <div className="cta-slogan">
               <h3 className="m-0">
-                Ready to get started with Convect?
+                Try deploying a model
               </h3>
             </div>
             <div className="cta-action">

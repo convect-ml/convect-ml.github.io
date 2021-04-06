@@ -31,6 +31,10 @@ class Home extends React.Component {
   render() {
 
     const genericSection01Header = {
+      title: 'Get started in under a minute'
+    }
+
+    const genericSection02Header = {
       title: 'Watch a demo'
     }
 
@@ -40,8 +44,20 @@ class Home extends React.Component {
         {/* <Clients topDivider bottomDivider /> */}
         <FeaturesSplit invertMobile topDivider imageFill />
         {/* <FeaturesTiles topDivider /> */}
-        {/* <GenericSection topDivider className="center-content">
+        <GenericSection topDivider className="center-content">
           <SectionHeader data={genericSection01Header} className="reveal-from-bottom" />
+          <div className="hero-figure reveal-from-bottom illustration-element-01" data-reveal-value="20px" data-reveal-delay="200">
+              <p>Start a virtual environment and install Convect in one line</p>
+              <Image
+                className="has-shadow"
+                src={require('./../assets/images/quick-install.gif')}
+                alt="Hero"
+                width={528}
+              />
+            </div>
+        </GenericSection>
+        <GenericSection topDivider className="center-content">
+          <SectionHeader data={genericSection02Header} className="reveal-from-bottom" />
           <div className="reveal-from-bottom">
             <a
               data-video="https://www.loom.com/embed/9136ceac56fb4efd8b301f79676ad8ee"
@@ -62,7 +78,7 @@ class Home extends React.Component {
             handleClose={this.closeModal}
             video="https://www.loom.com/embed/9136ceac56fb4efd8b301f79676ad8ee"
             videoTag="iframe" />
-        </GenericSection>         */}
+        </GenericSection>        
         <Pricing topDivider />
         <Cta split />
       </React.Fragment>
