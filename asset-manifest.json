@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.c8aa927d.chunk.css",
-    "main.js": "/static/js/main.e5dc9036.chunk.js",
-    "main.js.map": "/static/js/main.e5dc9036.chunk.js.map",
+    "main.css": "/static/css/main.c7427abc.chunk.css",
+    "main.js": "/static/js/main.cc430c5d.chunk.js",
+    "main.js.map": "/static/js/main.cc430c5d.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.476ba138.js",
     "runtime~main.js.map": "/static/js/runtime~main.476ba138.js.map",
-    "static/js/2.425fcb89.chunk.js": "/static/js/2.425fcb89.chunk.js",
-    "static/js/2.425fcb89.chunk.js.map": "/static/js/2.425fcb89.chunk.js.map",
+    "static/css/2.5c17b9f1.chunk.css": "/static/css/2.5c17b9f1.chunk.css",
+    "static/js/2.10a33684.chunk.js": "/static/js/2.10a33684.chunk.js",
+    "static/js/2.10a33684.chunk.js.map": "/static/js/2.10a33684.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.b75e8b371d629ea2f27bf53b1b3796b3.js": "/precache-manifest.b75e8b371d629ea2f27bf53b1b3796b3.js",
+    "precache-manifest.6ceb1b61c5836301a877a2fe5466da15.js": "/precache-manifest.6ceb1b61c5836301a877a2fe5466da15.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.c8aa927d.chunk.css.map": "/static/css/main.c8aa927d.chunk.css.map",
+    "static/css/2.5c17b9f1.chunk.css.map": "/static/css/2.5c17b9f1.chunk.css.map",
+    "static/css/main.c7427abc.chunk.css.map": "/static/css/main.c7427abc.chunk.css.map",
     "static/media/clients-01.svg": "/static/media/clients-01.60c45c8f.svg",
     "static/media/clients-02.svg": "/static/media/clients-02.ccd24bd0.svg",
     "static/media/clients-03.svg": "/static/media/clients-03.333c569a.svg",
@@ -24,8 +26,7 @@
     "static/media/feature-tile-icon-06.svg": "/static/media/feature-tile-icon-06.3c7d3b10.svg",
     "static/media/style.scss": "/static/media/illustration-section-01.ad9b81a8.svg",
     "static/media/logo.svg": "/static/media/logo.44bb9747.svg",
-    "static/media/model-deploy.gif": "/static/media/model-deploy.0b2e3dd7.gif",
-    "static/media/model-predict.gif": "/static/media/model-predict.3f612a8a.gif",
-    "static/media/model-train.gif": "/static/media/model-train.0db6e846.gif"
+    "static/media/model-deploy.jpg": "/static/media/model-deploy.919e028a.jpg",
+    "static/media/model-train.jpg": "/static/media/model-train.b18c8f0a.jpg"
   }
 }
