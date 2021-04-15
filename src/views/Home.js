@@ -13,11 +13,20 @@ import Cta from '../components/sections/Cta';
 import Image from '../components/elements/Image';
 import Modal from '../components/elements/Modal';
 
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+
 class Home extends React.Component {
 
   state = {
-    videoModalActive: false
+    videoModalActive: false,
+    pipInstallCopyHovered: false,
+    pipInstallValue: 'pip install convect',
+    pipInstallCopied: false,
+    installReadyHovered: false,
+    installReadyValue: 'convect ready',
+    installReadyCopied: false,
   }
+
   openModal = (e) => {
     e.preventDefault();
     this.setState({ videoModalActive: true });
@@ -26,6 +35,16 @@ class Home extends React.Component {
   closeModal = (e) => {
     e.preventDefault();
     this.setState({ videoModalActive: false });
+  }
+
+  pipInstallCopy = () => {
+    this.setState({ pipInstallCopied: true });
+    window.setTimeout(() => { this.setState({ pipInstallCopied: false }); }, 1000)
+  }
+
+  installReadyCopy = () => {
+    this.setState({ installReadyCopied: true });
+    window.setTimeout(() => { this.setState({ installReadyCopied: false }); }, 1000)
   }
 
   render() {
@@ -47,13 +66,41 @@ class Home extends React.Component {
         <GenericSection topDivider className="center-content">
           <SectionHeader data={genericSection01Header} className="reveal-from-bottom" />
           <div className="hero-figure reveal-from-bottom illustration-element-01" data-reveal-value="20px" data-reveal-delay="200">
-              <p>Start a virtual environment and install Convect in one line</p>
-              <Image
-                className="has-shadow"
-                src={require('./../assets/images/quick-install.gif')}
-                alt="Hero"
-                width={528}
-              />
+              <p>Activate a virtual environment. Then install Convect in one line.</p>
+              <div style={{margin: '0 auto', display: 'inline-block' }}>
+                  <CopyToClipboard text={this.state.pipInstallValue} onCopy={this.pipInstallCopy}>
+                    <code 
+                      style={{
+                        fontSize: 30,
+                        cursor: 'pointer',
+                        background: this.state.pipInstallCopyHovered ? '#2B2F40' : '#101119',
+                        color: this.state.pipInstallCopyHovered ? '#DDE2F4' : '#99A1BA'
+                      }}
+                      onMouseEnter={() => this.setState({ pipInstallCopyHovered: true })}
+                      onMouseLeave={() => this.setState({ pipInstallCopyHovered: false })}><span style={{ color: "#4A61DD"}}>(venv) $</span> pip install convect</code>
+                  </CopyToClipboard>
+                  <p style={{ textAlign: 'right', fontSize: 16 }}>
+                    { this.state.pipInstallCopied ? <span>Copied!</span> : <span>{ this.state.pipInstallCopyHovered ? <span>Click to copy to clipboard</span> : <span>&nbsp;</span>} </span> }
+                  </p>
+              </div>
+              <p>And you're ready to deploy models.</p>
+              <div style={{margin: '0 auto', display: 'inline-block' }}>
+                <CopyToClipboard text={this.state.installReadyValue} onCopy={this.installReadyCopy}>
+                  <code 
+                    style={{ 
+                      fontSize: 30,
+                      cursor: 'pointer',
+                      background: this.state.installReadyHovered ? '#2B2F40' : '#101119',
+                      color: this.state.installReadyHovered ? '#DDE2F4' : '#99A1BA'
+                    }}
+                    onMouseEnter={() => this.setState({ installReadyHovered: true })}
+                    onMouseLeave={() => this.setState({ installReadyHovered: false })}><span style={{ color: "#4A61DD" }}>(venv) $</span> convect ready&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                </CopyToClipboard>
+                <p style={{ textAlign: 'right', fontSize: 16 }}>
+                  { this.state.installReadyCopied ? <span>Copied!</span> : <span>{ this.state.installReadyHovered ? <span>Click to copy to clipboard</span> : <span>&nbsp;</span>} </span> }
+                </p>
+              </div>
+              <p>See our <a href="https://convect.readme.io/docs">documentation</a> for next steps.</p>
             </div>
         </GenericSection>
         <GenericSection topDivider className="center-content">

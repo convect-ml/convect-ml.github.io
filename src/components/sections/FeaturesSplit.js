@@ -54,8 +54,7 @@ class FeaturesSplit extends React.Component {
     );
 
     const sectionHeader = {
-      title: 'Built for typical data science workflows',
-      paragraph: 'Do it all in Python, all in your notebook, using common data science tools.'
+      title: 'Deploy models from your Jupyter notebook'
     };
 
     return (
@@ -98,7 +97,7 @@ class FeaturesSplit extends React.Component {
                     2. Deploy the model instantly with Convect
                   </h3>
                   <p className="m-0">
-                    In exactly one click, create an endpoint from your model that you can share with the world.
+                    Call a deploy function and instantly create an endpoint for your model that you can share with the world.
                   </p>
                 </div>
                 <div className={
@@ -122,7 +121,7 @@ class FeaturesSplit extends React.Component {
                     3. Make predictions from anywhere
                   </h3>
                   <p className="m-0">
-                    In any language. From any computer with an internet connection.
+                    In any language. From any computer with internet.
                   </p>
                 </div>
                 <div className={
