@@ -20,7 +20,7 @@ class Home extends React.Component {
   state = {
     videoModalActive: false,
     pipInstallCopyHovered: false,
-    pipInstallValue: 'pip install convect',
+    pipInstallValue: 'pip3 install convect',
     pipInstallCopied: false,
     installReadyHovered: false,
     installReadyValue: 'convect ready',
@@ -78,7 +78,7 @@ class Home extends React.Component {
                         color: this.state.pipInstallCopyHovered ? '#DDE2F4' : '#99A1BA'
                       }}
                       onMouseEnter={() => this.setState({ pipInstallCopyHovered: true })}
-                      onMouseLeave={() => this.setState({ pipInstallCopyHovered: false })}><span style={{ color: "#4A61DD"}}>(venv) $</span> pip install convect</pre>
+                      onMouseLeave={() => this.setState({ pipInstallCopyHovered: false })}><span style={{ color: "#4A61DD"}}>(venv) $</span> {this.state.pipInstallValue}</pre>
                   </CopyToClipboard>
                   <p style={{ textAlign: 'right', fontSize: 16 }}>
                     { this.state.pipInstallCopied ? <span>Copied!</span> : <span>{ this.state.pipInstallCopyHovered ? <span>Click to copy to clipboard</span> : <span>&nbsp;</span>} </span> }
@@ -98,7 +98,7 @@ class Home extends React.Component {
                       color: this.state.installReadyHovered ? '#DDE2F4' : '#99A1BA'
                     }}
                     onMouseEnter={() => this.setState({ installReadyHovered: true })}
-                    onMouseLeave={() => this.setState({ installReadyHovered: false })}><span style={{ color: "#4A61DD" }}>(venv) $</span> convect ready</pre>
+                    onMouseLeave={() => this.setState({ installReadyHovered: false })}><span style={{ color: "#4A61DD" }}>(venv) $</span> {this.state.installReadyValue}</pre>
                 </CopyToClipboard>
                 <p style={{ textAlign: 'right', fontSize: 16 }}>
                   { this.state.installReadyCopied ? <span>Copied!</span> : <span>{ this.state.installReadyHovered ? <span>Click to copy to clipboard</span> : <span>&nbsp;</span>} </span> }
