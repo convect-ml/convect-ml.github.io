@@ -2,7 +2,7 @@
   "name": "convect-ml-landing",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://convect-ml.github.io/",
+  "homepage": "https://convect-ml.github.io/",
   "dependencies": {
     "@typeform/embed": "^0.34.6",
     "classnames": "^2.2.6",
@@ -12,7 +12,8 @@
     "react-copy-to-clipboard": "^5.0.3",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.1.1"
+    "react-scripts": "3.1.1",
+    "react-tabs": "^3.2.2"
   },
   "scripts": {
     "start": "react-scripts start",

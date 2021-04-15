@@ -1,0 +1,8 @@
+.react-tabs__tab--selected {
+    background: #2B2F40;
+    color: #DDE2F4;
+}
+
+.react-tabs__tab:focus:after {
+    background: #2B2F40;
+  }

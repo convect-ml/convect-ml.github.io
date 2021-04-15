@@ -4,6 +4,9 @@ import { SectionSplitProps } from '../../utils/SectionProps';
 import SectionHeader from './partials/SectionHeader';
 import Image from '../elements/Image';
 
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+
 const propTypes = {
   ...SectionSplitProps.types
 }
@@ -13,6 +16,18 @@ const defaultProps = {
 }
 
 class FeaturesSplit extends React.Component {
+
+  state = {
+    curlCmd: "curl \\\n  -H 'Content-Type: application/json' \\\n  -d '[{\"area\":1600,\"number_of_bedrooms\":3}]' \\\n  -X POST \\\n  https://api.convect.ml/predict-v0/L3bMR89gDXpmrB1PNA-2XX526yeZ_VYdWj4q5QEJxoK/",
+    pythonCmd: "import requests\nresponse = requests.post(\n  \"https://api.convect.ml/predict-v0/L3bMR89gDXpmrB1PNA-2XX526yeZ_VYdWj4q5QEJxoK/\",\n  json=[{\"area\":1600,\"number_of_bedrooms\":3}]\n)\nresponse.json()",
+    cmdHovered: false,
+    cmdCopied: false,
+  }
+
+  cmdCopy = () => {
+    this.setState({ cmdCopied: true });
+    window.setTimeout(() => { this.setState({ cmdCopied: false }); }, 1000)
+  }
 
   render() {
 
@@ -84,10 +99,8 @@ class FeaturesSplit extends React.Component {
                   data-reveal-container=".split-item">
                   <Image
                     className="has-shadow"
-                    src={require('./../../assets/images/model-train.gif')}
-                    alt="Features split 01"
-                    width={528}
-                    height={396} />
+                    src={require('./../../assets/images/model-train.jpg')}
+                    alt="Features split 01" />
                 </div>
               </div>
 
@@ -108,10 +121,8 @@ class FeaturesSplit extends React.Component {
                   data-reveal-container=".split-item">
                   <Image
                     className="has-shadow"
-                    src={require('./../../assets/images/model-deploy.gif')}
-                    alt="Features split 02"
-                    width={528}
-                    height={396} />
+                    src={require('./../../assets/images/model-deploy.jpg')}
+                    alt="Features split 02" />
                 </div>
               </div>
 
@@ -130,12 +141,46 @@ class FeaturesSplit extends React.Component {
                     imageFill && 'split-item-image-fill'
                   )}
                   data-reveal-container=".split-item">
-                  <Image
-                    className="has-shadow"
-                    src={require('./../../assets/images/model-predict.gif')}
-                    alt="Features split 03"
-                    width={528}
-                    height={396} />
+                  <Tabs>
+                    <TabList>
+                      <Tab>Shell</Tab>
+                      <Tab>Python</Tab>
+                    </TabList>
+
+                    <TabPanel>
+                      <CopyToClipboard text={this.state.curlCmd} onCopy={this.cmdCopy}>
+                        <pre
+                          style={{ 
+                            marginBottom: 0,
+                            cursor: 'pointer',
+                            background: this.state.cmdHovered ? '#2B2F40' : '#101119',
+                            color: this.state.cmdHovered ? '#DDE2F4' : '#99A1BA'
+                          }}
+                          onMouseEnter={() => this.setState({ cmdHovered: true })}
+                          onMouseLeave={() => this.setState({ cmdHovered: false })}>
+                            { this.state.curlCmd }
+                        </pre>
+                      </CopyToClipboard>
+                    </TabPanel>
+                    <TabPanel>
+                    <CopyToClipboard text={this.state.pythonCmd} onCopy={this.cmdCopy}>
+                        <pre
+                          style={{ 
+                            marginBottom: 0,
+                            cursor: 'pointer',
+                            background: this.state.cmdHovered ? '#2B2F40' : '#101119',
+                            color: this.state.cmdHovered ? '#DDE2F4' : '#99A1BA'
+                          }}
+                          onMouseEnter={() => this.setState({ cmdHovered: true })}
+                          onMouseLeave={() => this.setState({ cmdHovered: false })}>
+                            { this.state.pythonCmd }
+                        </pre>
+                      </CopyToClipboard>
+                    </TabPanel>
+                  </Tabs>
+                  <p style={{ textAlign: 'right', fontSize: 16 }}>
+                    { this.state.cmdCopied ? <span>Copied!</span> : <span>{ this.state.cmdHovered ? <span>Click to copy to clipboard</span> : <span>&nbsp;</span>} </span> }
+                  </p>
                 </div>
               </div>
 

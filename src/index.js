@@ -6,8 +6,9 @@ import { createBrowserHistory } from "history";
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-//import './App.css';
 import './assets/scss/style.scss';
+import 'react-tabs/style/react-tabs.css';
+import './App.css';
 
 const history = createBrowserHistory();
 

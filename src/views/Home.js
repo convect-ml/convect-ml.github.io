@@ -66,35 +66,39 @@ class Home extends React.Component {
         <GenericSection topDivider className="center-content">
           <SectionHeader data={genericSection01Header} className="reveal-from-bottom" />
           <div className="hero-figure reveal-from-bottom illustration-element-01" data-reveal-value="20px" data-reveal-delay="200">
-              <p>Activate a virtual environment. Then install Convect in one line.</p>
+              <span>Activate a virtual environment. Then install Convect in one line.</span><br />
               <div style={{margin: '0 auto', display: 'inline-block' }}>
                   <CopyToClipboard text={this.state.pipInstallValue} onCopy={this.pipInstallCopy}>
-                    <code 
+                    <pre 
                       style={{
-                        fontSize: 30,
+                        fontSize: 20,
+                        marginBottom: 0,
                         cursor: 'pointer',
                         background: this.state.pipInstallCopyHovered ? '#2B2F40' : '#101119',
                         color: this.state.pipInstallCopyHovered ? '#DDE2F4' : '#99A1BA'
                       }}
                       onMouseEnter={() => this.setState({ pipInstallCopyHovered: true })}
-                      onMouseLeave={() => this.setState({ pipInstallCopyHovered: false })}><span style={{ color: "#4A61DD"}}>(venv) $</span> pip install convect</code>
+                      onMouseLeave={() => this.setState({ pipInstallCopyHovered: false })}><span style={{ color: "#4A61DD"}}>(venv) $</span> pip install convect</pre>
                   </CopyToClipboard>
                   <p style={{ textAlign: 'right', fontSize: 16 }}>
                     { this.state.pipInstallCopied ? <span>Copied!</span> : <span>{ this.state.pipInstallCopyHovered ? <span>Click to copy to clipboard</span> : <span>&nbsp;</span>} </span> }
                   </p>
               </div>
-              <p>And you're ready to deploy models.</p>
+              <br />
+              <span>And you're ready to deploy models.</span>
+              <br />
               <div style={{margin: '0 auto', display: 'inline-block' }}>
                 <CopyToClipboard text={this.state.installReadyValue} onCopy={this.installReadyCopy}>
-                  <code 
+                  <pre 
                     style={{ 
-                      fontSize: 30,
+                      fontSize: 20,
+                      marginBottom: 0,
                       cursor: 'pointer',
                       background: this.state.installReadyHovered ? '#2B2F40' : '#101119',
                       color: this.state.installReadyHovered ? '#DDE2F4' : '#99A1BA'
                     }}
                     onMouseEnter={() => this.setState({ installReadyHovered: true })}
-                    onMouseLeave={() => this.setState({ installReadyHovered: false })}><span style={{ color: "#4A61DD" }}>(venv) $</span> convect ready&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                    onMouseLeave={() => this.setState({ installReadyHovered: false })}><span style={{ color: "#4A61DD" }}>(venv) $</span> convect ready</pre>
                 </CopyToClipboard>
                 <p style={{ textAlign: 'right', fontSize: 16 }}>
                   { this.state.installReadyCopied ? <span>Copied!</span> : <span>{ this.state.installReadyHovered ? <span>Click to copy to clipboard</span> : <span>&nbsp;</span>} </span> }
