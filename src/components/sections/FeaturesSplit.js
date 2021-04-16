@@ -21,14 +21,14 @@ class FeaturesSplit extends React.Component {
 
   state = {
     curlCmd: `curl \\
--H 'Content-Type: application/json' \\
--d '[{"area":1600, "number_of_bedrooms":3}]' \\
--X POST \\
-${apiUrl}`,
+  -H 'Content-Type: application/json' \\
+  -d '[{"area":1600, "number_of_bedrooms":3}]' \\
+  -X POST \\
+  ${apiUrl}`,
     pythonCmd: `import requests
 response = requests.post(
-  "${apiUrl}",
-  json=[{"area": 1600, "number_of_bedrooms": 3}]
+    "${apiUrl}",
+    json=[{"area": 1600, "number_of_bedrooms": 3}]
 )
 response.json()`,
     javascriptCmd: `const fetch = require('node-fetch');
