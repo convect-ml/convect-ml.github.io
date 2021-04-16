@@ -15,11 +15,46 @@ const defaultProps = {
   ...SectionSplitProps.defaults
 }
 
+const apiUrl = "https://api.convect.ml/predict-v0/L3bMR89gDXpmrB1PNA-2XX526yeZ_VYdWj4q5QEJxoK/"
+
 class FeaturesSplit extends React.Component {
 
   state = {
-    curlCmd: "curl \\\n  -H 'Content-Type: application/json' \\\n  -d '[{\"area\":1600,\"number_of_bedrooms\":3}]' \\\n  -X POST \\\n  https://api.convect.ml/predict-v0/L3bMR89gDXpmrB1PNA-2XX526yeZ_VYdWj4q5QEJxoK/",
-    pythonCmd: "import requests\nresponse = requests.post(\n  \"https://api.convect.ml/predict-v0/L3bMR89gDXpmrB1PNA-2XX526yeZ_VYdWj4q5QEJxoK/\",\n  json=[{\"area\":1600,\"number_of_bedrooms\":3}]\n)\nresponse.json()",
+    curlCmd: `curl \\
+-H 'Content-Type: application/json' \\
+-d '[{"area":1600, "number_of_bedrooms":3}]' \\
+-X POST \\
+${apiUrl}`,
+    pythonCmd: `import requests
+response = requests.post(
+  "${apiUrl}",
+  json=[{"area": 1600, "number_of_bedrooms": 3}]
+)
+response.json()`,
+    javascriptCmd: `const fetch = require('node-fetch');
+fetch('${apiUrl}', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify([{ area: 1600, number_of_bedrooms: 3 }]),
+}).then(
+  response => response.json()
+).then(
+  data => console.log('Success:', data)
+).catch(
+  error => console.error('Error:', error)
+);`,
+    rubyCmd: `require 'net/http'
+require 'json'
+require 'uri'
+uri = URI.parse("${apiUrl}")
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+request = Net::HTTP::Post.new(uri.request_uri, 'Content-Type' => 'application/json')
+request.body = [{area: 1600, number_of_bedrooms: 3}].to_json
+response = http.request(request)
+response.body`,
     cmdHovered: false,
     cmdCopied: false,
   }
@@ -145,6 +180,8 @@ class FeaturesSplit extends React.Component {
                     <TabList>
                       <Tab>Shell</Tab>
                       <Tab>Python</Tab>
+                      <Tab>Javascript</Tab>
+                      <Tab>Ruby</Tab>
                     </TabList>
 
                     <TabPanel>
@@ -174,6 +211,36 @@ class FeaturesSplit extends React.Component {
                           onMouseEnter={() => this.setState({ cmdHovered: true })}
                           onMouseLeave={() => this.setState({ cmdHovered: false })}>
                             { this.state.pythonCmd }
+                        </pre>
+                      </CopyToClipboard>
+                    </TabPanel>
+                    <TabPanel>
+                    <CopyToClipboard text={this.state.javascriptCmd} onCopy={this.cmdCopy}>
+                        <pre
+                          style={{ 
+                            marginBottom: 0,
+                            cursor: 'pointer',
+                            background: this.state.cmdHovered ? '#2B2F40' : '#101119',
+                            color: this.state.cmdHovered ? '#DDE2F4' : '#99A1BA'
+                          }}
+                          onMouseEnter={() => this.setState({ cmdHovered: true })}
+                          onMouseLeave={() => this.setState({ cmdHovered: false })}>
+                            { this.state.javascriptCmd }
+                        </pre>
+                      </CopyToClipboard>
+                    </TabPanel>
+                    <TabPanel>
+                    <CopyToClipboard text={this.state.rubyCmd} onCopy={this.cmdCopy}>
+                        <pre
+                          style={{ 
+                            marginBottom: 0,
+                            cursor: 'pointer',
+                            background: this.state.cmdHovered ? '#2B2F40' : '#101119',
+                            color: this.state.cmdHovered ? '#DDE2F4' : '#99A1BA'
+                          }}
+                          onMouseEnter={() => this.setState({ cmdHovered: true })}
+                          onMouseLeave={() => this.setState({ cmdHovered: false })}>
+                            { this.state.rubyCmd }
                         </pre>
                       </CopyToClipboard>
                     </TabPanel>
