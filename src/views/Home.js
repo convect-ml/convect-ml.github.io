@@ -50,7 +50,7 @@ class Home extends React.Component {
   render() {
 
     const genericSection01Header = {
-      title: 'Get started in under a minute'
+      title: 'Get started in seconds'
     }
 
     const genericSection02Header = {
