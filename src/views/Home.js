@@ -50,11 +50,11 @@ class Home extends React.Component {
   render() {
 
     const genericSection01Header = {
-      title: 'Get started in seconds'
+      title: 'Install Convect in one line'
     }
 
     const genericSection02Header = {
-      title: 'Watch a demo'
+      title: 'Watch a tutorial to get started'
     }
 
     return (
@@ -66,7 +66,7 @@ class Home extends React.Component {
         <GenericSection topDivider className="center-content">
           <SectionHeader data={genericSection01Header} className="reveal-from-bottom" />
           <div className="hero-figure reveal-from-bottom illustration-element-01" data-reveal-value="20px" data-reveal-delay="200">
-              <span>Activate a virtual environment. Then install Convect in one line.</span><br />
+              <span>Activate a virtual environment. Then install Convect with pip3.</span><br />
               <div style={{margin: '0 auto', display: 'inline-block' }}>
                   <CopyToClipboard text={this.state.pipInstallValue} onCopy={this.pipInstallCopy}>
                     <pre 
@@ -111,13 +111,13 @@ class Home extends React.Component {
           <SectionHeader data={genericSection02Header} className="reveal-from-bottom" />
           <div className="reveal-from-bottom">
             <a
-              data-video="https://www.loom.com/embed/9136ceac56fb4efd8b301f79676ad8ee"
+              data-video="https://www.loom.com/embed/1399e76798f040db8e1d25b0d78fb106"
               href="#0"
               aria-controls="video-modal"
               onClick={this.openModal}
             >
               <Image
-                src="https://cdn.loom.com/sessions/thumbnails/9136ceac56fb4efd8b301f79676ad8ee-with-play.gif"
+                src="https://cdn.loom.com/sessions/thumbnails/1399e76798f040db8e1d25b0d78fb106-with-play.gif"
                 alt="Video"
                 width={712}
                 height={400} />
@@ -127,7 +127,7 @@ class Home extends React.Component {
             id="video-modal"
             show={this.state.videoModalActive}
             handleClose={this.closeModal}
-            video="https://www.loom.com/embed/9136ceac56fb4efd8b301f79676ad8ee"
+            video="https://www.loom.com/embed/1399e76798f040db8e1d25b0d78fb106"
             videoTag="iframe" />
         </GenericSection>        
         <Pricing topDivider />
