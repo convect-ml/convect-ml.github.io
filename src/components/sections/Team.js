@@ -61,6 +61,9 @@ class Team extends React.Component {
         <div className="container">
           <div className={innerClasses}>
             <SectionHeader data={sectionHeader} className="center-content reveal-from-bottom" />
+            <div>
+              Questions? Comments? Please reach out to <a href="mailto: support@convect.ml">support@convect.ml</a>. We'd love to hear from you!
+            </div>
             {/* <div className={tilesClasses}>
 
               <div className="tiles-item reveal-from-bottom">

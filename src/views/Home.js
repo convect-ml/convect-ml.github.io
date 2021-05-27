@@ -122,6 +122,8 @@ class Home extends React.Component {
                 width={712}
                 height={400} />
             </a>
+            <br />
+            <big>And check out the <strong><a href="https://app.convect.ml/#/demo">demo page</a></strong> to view deployed models without signing in.</big>
           </div>
           <Modal
             id="video-modal"
@@ -129,8 +131,6 @@ class Home extends React.Component {
             handleClose={this.closeModal}
             video="https://www.loom.com/embed/b93bd8013b194cc0a9644dd559c17345"
             videoTag="iframe" />
-          <br />
-          <span>And check out the <a href="https://app.convect.ml/#/demo">demo page</a> to try out the admin dashboard without signing in.</span>
         </GenericSection> 
         <Pricing topDivider />
         <Cta split />

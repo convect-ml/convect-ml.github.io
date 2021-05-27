@@ -17,7 +17,7 @@ const FooterSocial = ({
       className={classes}
     >
       <ul className="list-reset">
-        <li>
+        {/* <li>
           <a href="https://facebook.com/">
             <svg
               width="16"
@@ -60,6 +60,9 @@ const FooterSocial = ({
               </g>
             </svg>
           </a>
+        </li> */}
+        <li>
+          <a href="mailto: support@convect.ml">support@convect.ml</a>
         </li>
       </ul>
     </div>

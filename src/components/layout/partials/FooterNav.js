@@ -19,6 +19,9 @@ const FooterNav = ({
     >
       <ul className="list-reset">
         <li>
+          <a href="https://app.convect.ml/#/demo">Demo</a>
+        </li>
+        <li>
         <a href="https://convect.readme.io">Documentation</a>
         </li>
         <li>
