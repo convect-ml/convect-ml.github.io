@@ -54,7 +54,7 @@ class Home extends React.Component {
     }
 
     const genericSection02Header = {
-      title: 'Watch a tutorial to get started'
+      title: 'Watch a walkthrough of the features'
     }
 
     return (
@@ -111,13 +111,13 @@ class Home extends React.Component {
           <SectionHeader data={genericSection02Header} className="reveal-from-bottom" />
           <div className="reveal-from-bottom">
             <a
-              data-video="https://www.loom.com/embed/1399e76798f040db8e1d25b0d78fb106"
+              data-video="https://www.loom.com/embed/b93bd8013b194cc0a9644dd559c17345"
               href="#0"
               aria-controls="video-modal"
               onClick={this.openModal}
             >
               <Image
-                src="https://cdn.loom.com/sessions/thumbnails/1399e76798f040db8e1d25b0d78fb106-with-play.gif"
+                src="https://cdn.loom.com/sessions/thumbnails/b93bd8013b194cc0a9644dd559c17345-with-play.gif"
                 alt="Video"
                 width={712}
                 height={400} />
@@ -127,9 +127,11 @@ class Home extends React.Component {
             id="video-modal"
             show={this.state.videoModalActive}
             handleClose={this.closeModal}
-            video="https://www.loom.com/embed/1399e76798f040db8e1d25b0d78fb106"
+            video="https://www.loom.com/embed/b93bd8013b194cc0a9644dd559c17345"
             videoTag="iframe" />
-        </GenericSection>        
+          <br />
+          <span>And check out the <a href="https://app.convect.ml/#/demo">demo page</a> to try out the admin dashboard without signing in.</span>
+        </GenericSection> 
         <Pricing topDivider />
         <Cta split />
       </React.Fragment>

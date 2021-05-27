@@ -15,20 +15,20 @@ const defaultProps = {
   ...SectionSplitProps.defaults
 }
 
-const apiUrl = "https://api.convect.ml/predict-v0/L3bMR89gDXpmrB1PNA-2XX526yeZ_VYdWj4q5QEJxoK/"
+const apiUrl = "https://api.convect.ml/predict-v0/LXG4VWDdEN1-PjKMBwYn7dbn6q3eob50xJ98gzQ7RrZ/"
 
 class FeaturesSplit extends React.Component {
 
   state = {
     curlCmd: `curl \\
   -H 'Content-Type: application/json' \\
-  -d '[{"area":1600, "number_of_bedrooms":3}]' \\
+  -d '[[1600, 2], [1900, 3]]' \\
   -X POST \\
   ${apiUrl}`,
     pythonCmd: `import requests
 response = requests.post(
     "${apiUrl}",
-    json=[{"area": 1600, "number_of_bedrooms": 3}]
+    json=[[1600, 2], [1900, 3]]
 )
 response.json()`,
     javascriptCmd: `const fetch = require('node-fetch');
@@ -37,7 +37,7 @@ fetch('${apiUrl}', {
   headers: {
     'Content-Type': 'application/json',
   },
-  body: JSON.stringify([{ area: 1600, number_of_bedrooms: 3 }]),
+  body: JSON.stringify([[1600, 2], [1900, 3]]),
 }).then(
   response => response.json()
 ).then(
@@ -52,7 +52,7 @@ uri = URI.parse("${apiUrl}")
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 request = Net::HTTP::Post.new(uri.request_uri, 'Content-Type' => 'application/json')
-request.body = [{area: 1600, number_of_bedrooms: 3}].to_json
+request.body = [[1600, 2], [1900, 3]].to_json
 response = http.request(request)
 response.body`,
     cmdHovered: false,
@@ -104,7 +104,7 @@ response.body`,
     );
 
     const sectionHeader = {
-      title: 'Deploy models from your Jupyter notebook'
+      title: 'Deploy machine learning models from your Jupyter notebook'
     };
 
     return (
@@ -167,7 +167,7 @@ response.body`,
                     3. Make predictions from anywhere
                   </h3>
                   <p className="m-0">
-                    In any language. From any computer with internet.
+                    Call the model's API using your favorite programming language.
                   </p>
                 </div>
                 <div className={

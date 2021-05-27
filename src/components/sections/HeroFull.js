@@ -55,7 +55,7 @@ class HeroFull extends React.Component {
               </h1>
               <div className="container-xs">
                 <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
-                Convect deploys trained ML models in Jupyter notebooks to shareable API endpoints in seconds. No web dev or infra experience required.
+                Convect deploys trained ML models in Jupyter notebooks to shareable API endpoints in seconds. No web development or infrastructure experience required.
                 </p>
                 <div className="reveal-from-bottom" data-reveal-delay="600">
                 <Button tag="a" color="primary" wideMobile href="https://app.convect.ml/">Try Convect in under a minute</Button>

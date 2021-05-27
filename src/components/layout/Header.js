@@ -122,6 +122,9 @@ class Header extends React.Component {
                         navPosition && `header-nav-${navPosition}`
                       )}>
                       <li>
+                        <a href="https://app.convect.ml/#/demo">Demo</a>
+                      </li>
+                      <li>
                         <a href="https://convect.readme.io">Documentation</a>
                       </li>
                       <li>
