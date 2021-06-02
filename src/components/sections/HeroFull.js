@@ -45,7 +45,7 @@ class HeroFull extends React.Component {
     );
 
     const trackClickTryConvectInHeroFull = () => {
-      Mixpanel.track('clickTryConvectInHeroFull');
+      Mixpanel.track('click try convect', { source: 'hero full' });
     }
 
     return (
