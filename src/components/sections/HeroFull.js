@@ -5,6 +5,8 @@ import Button from '../elements/Button';
 import Image from '../elements/Image';
 import TypeformButton from '../layout/partials/TypeformButton';
 
+import { Mixpanel } from '../../Mixpanel';
+
 const propTypes = {
   ...SectionProps.types
 }
@@ -42,6 +44,10 @@ class HeroFull extends React.Component {
       bottomDivider && 'has-bottom-divider'
     );
 
+    const trackClickTryConvectInHeroFull = () => {
+      Mixpanel.track('clickTryConvectInHeroFull');
+    }
+
     return (
       <section
         {...props}
@@ -58,7 +64,7 @@ class HeroFull extends React.Component {
                 Convect deploys trained ML models in Jupyter notebooks to shareable API endpoints in seconds. No web development or infrastructure experience required.
                 </p>
                 <div className="reveal-from-bottom" data-reveal-delay="600">
-                <Button tag="a" color="primary" wideMobile href="https://app.convect.ml/">Try Convect in under a minute</Button>
+                <Button tag="a" color="primary" wideMobile href="https://app.convect.ml/" onClick={this.trackClickTryConvectInHeroFull}>Try Convect in under a minute</Button>
                 </div>
               </div>
             </div>

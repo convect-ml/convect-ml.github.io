@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter, Switch } from 'react-router-dom';
 import AppRoute from './utils/AppRoute';
 import ScrollReveal from './utils/ScrollReveal';
+import { Mixpanel } from './Mixpanel';
 
 // Layouts
 import LayoutDefault from './layouts/LayoutDefault';
@@ -24,6 +25,7 @@ class App extends React.Component {
   // Route change
   componentDidUpdate(prevProps) {
     if (this.props.location.pathname !== prevProps.location.pathname) {
+      Mixpanel.track(this.props.location.pathname);
       this.refs.scrollReveal.init();
     }
   }

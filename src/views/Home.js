@@ -13,6 +13,8 @@ import Cta from '../components/sections/Cta';
 import Image from '../components/elements/Image';
 import Modal from '../components/elements/Modal';
 
+import { Mixpanel } from '../Mixpanel';
+
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 class Home extends React.Component {
@@ -38,11 +40,13 @@ class Home extends React.Component {
   }
 
   pipInstallCopy = () => {
+    Mixpanel.track('pipInstallCopy');
     this.setState({ pipInstallCopied: true });
     window.setTimeout(() => { this.setState({ pipInstallCopied: false }); }, 1000)
   }
 
   installReadyCopy = () => {
+    Mixpanel.track('installReadyCopy');
     this.setState({ installReadyCopied: true });
     window.setTimeout(() => { this.setState({ installReadyCopied: false }); }, 1000)
   }

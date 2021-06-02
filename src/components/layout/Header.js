@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import Logo from './partials/Logo';
 import Button from '../elements/Button';
 
+import { Mixpanel } from '../../Mixpanel';
+
 const propTypes = {
   active: PropTypes.bool,
   navPosition: PropTypes.string,
@@ -64,6 +66,10 @@ class Header extends React.Component {
     if (!this.nav.current) return
     if (!this.state.isActive || this.nav.current.contains(e.target) || e.target === this.hamburger.current) return;
     this.closeMenu();
+  }
+
+  trackClickTryConvectInHeader = () => {
+    Mixpanel.track('clickTryConvectInHeader');
   }
 
   render() {
@@ -136,7 +142,7 @@ class Header extends React.Component {
                         className="list-reset header-nav-right"
                       >
                         <li>
-                        <Button tag="a" color="primary" wideMobile href="https://app.convect.ml/" size="sm">Try Convect now</Button>
+                        <Button tag="a" color="primary" wideMobile href="https://app.convect.ml/" size="sm" onClick={this.trackClickTryConvectInHeader}>Try Convect now</Button>
                         </li>
                       </ul>}
                   </div>

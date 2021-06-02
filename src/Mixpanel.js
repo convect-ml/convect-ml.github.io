@@ -1,6 +1,6 @@
 import mixpanel from 'mixpanel-browser';
 
-mixpanel.init(process.env.REACT_APP_WEATHER_API_KEY);
+mixpanel.init(process.env.REACT_APP_MIXPANEL_API_KEY);
 
 let env_check = process.env.NODE_ENV === 'production';
 

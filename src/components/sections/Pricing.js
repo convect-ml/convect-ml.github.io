@@ -7,6 +7,7 @@ import Switch from '../elements/Switch';
 import Button from '../elements/Button';
 import { dropRight } from 'lodash';
 import TypeformButton from '../layout/partials/TypeformButton';
+import { Mixpanel } from '../../Mixpanel';
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -105,6 +106,10 @@ class Pricing extends React.Component {
       paragraph: 'Pricing is coming soon. Convect is free while we are in beta testing.'
     };
 
+    const trackClickTryConvectInPricing = () => {
+      Mixpanel.track('clickTryConvectInPricing');
+    };
+
     return (
       <section
         {...props}
@@ -150,7 +155,7 @@ class Pricing extends React.Component {
                     </div>
                   </div>
                   <div className="pricing-item-cta mb-8">
-                    <Button tag="a" color="primary" wide href="https://app.convect.ml/">Try Convect now</Button>
+                    <Button tag="a" color="primary" wide href="https://app.convect.ml/" onClick={this.trackClickTryConvectInPricing}>Try Convect now</Button>
                   </div>
                 </div>
               </div>

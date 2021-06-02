@@ -4,6 +4,8 @@ import { SectionSplitProps } from '../../utils/SectionProps';
 import SectionHeader from './partials/SectionHeader';
 import Image from '../elements/Image';
 
+import { Mixpanel } from '../../Mixpanel';
+
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
@@ -60,6 +62,7 @@ response.body`,
   }
 
   cmdCopy = () => {
+    Mixpanel.track('cmdCopy');
     this.setState({ cmdCopied: true });
     window.setTimeout(() => { this.setState({ cmdCopied: false }); }, 1000)
   }

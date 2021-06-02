@@ -4,6 +4,8 @@ import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
 import Button from '../elements/Button';
 
+import { Mixpanel } from '../../Mixpanel';
+
 const propTypes = {
   ...SectionProps.types,
   split: PropTypes.bool
@@ -45,6 +47,10 @@ class Cta extends React.Component {
       split && 'cta-split'
     );
 
+    const trackClickTryConvectInCta = () => {
+      Mixpanel.track('clickTryConvectInCta');
+    }
+
     return (
       <section
         {...props}
@@ -60,7 +66,7 @@ class Cta extends React.Component {
               </h3>
             </div>
             <div className="cta-action">
-              <Button tag="a" color="primary" wide href="https://app.convect.ml/">Try Convect now</Button>
+              <Button tag="a" color="primary" wide href="https://app.convect.ml/" onClick={this.trackClickTryConvectInCta}>Try Convect now</Button>
             </div>
           </div>
         </div>
