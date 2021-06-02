@@ -59,12 +59,24 @@ response = http.request(request)
 response.body`,
     cmdHovered: false,
     cmdCopied: false,
+    cmdSelected: "Shell",
+    cmdOptions: ["Shell", "Python", "Javascript", "Ruby"]
   }
 
   cmdCopy = () => {
-    Mixpanel.track('cmdCopy');
+    Mixpanel.track('copy query command', {
+      language: this.state.cmdSelected
+    });
     this.setState({ cmdCopied: true });
     window.setTimeout(() => { this.setState({ cmdCopied: false }); }, 1000)
+  }
+
+  handleTabSelect = (index, lastIndex, event) => {
+    this.setState({ cmdSelected: this.state.cmdOptions[index] });
+    Mixpanel.track('select query language', {
+      prevSelected: this.state.cmdOptions[lastIndex],
+      currSelected: this.state.cmdOptions[index],
+    });
   }
 
   render() {
@@ -179,12 +191,9 @@ response.body`,
                     imageFill && 'split-item-image-fill'
                   )}
                   data-reveal-container=".split-item">
-                  <Tabs>
+                  <Tabs onSelect={this.handleTabSelect}>
                     <TabList>
-                      <Tab>Shell</Tab>
-                      <Tab>Python</Tab>
-                      <Tab>Javascript</Tab>
-                      <Tab>Ruby</Tab>
+                      { this.state.cmdOptions.map( option => (<Tab key={option}>{ option }</Tab>)) }
                     </TabList>
 
                     <TabPanel>

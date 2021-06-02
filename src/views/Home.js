@@ -40,13 +40,13 @@ class Home extends React.Component {
   }
 
   pipInstallCopy = () => {
-    Mixpanel.track('pipInstallCopy');
+    Mixpanel.track('copy pip install');
     this.setState({ pipInstallCopied: true });
     window.setTimeout(() => { this.setState({ pipInstallCopied: false }); }, 1000)
   }
 
   installReadyCopy = () => {
-    Mixpanel.track('installReadyCopy');
+    Mixpanel.track('copy install ready');
     this.setState({ installReadyCopied: true });
     window.setTimeout(() => { this.setState({ installReadyCopied: false }); }, 1000)
   }

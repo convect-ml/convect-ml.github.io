@@ -107,7 +107,7 @@ class Pricing extends React.Component {
     };
 
     const trackClickTryConvectInPricing = () => {
-      Mixpanel.track('clickTryConvectInPricing');
+      Mixpanel.track('click try convect', { source: 'pricing' });
     };
 
     return (

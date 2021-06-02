@@ -69,7 +69,7 @@ class Header extends React.Component {
   }
 
   trackClickTryConvectInHeader = () => {
-    Mixpanel.track('clickTryConvectInHeader');
+    Mixpanel.track('click try convect', { source: 'header' });
   }
 
   render() {

@@ -25,7 +25,10 @@ class App extends React.Component {
   // Route change
   componentDidUpdate(prevProps) {
     if (this.props.location.pathname !== prevProps.location.pathname) {
-      Mixpanel.track(this.props.location.pathname);
+      Mixpanel.track('navigate', {
+        departure: prevProps.location.pathname,
+        arrival: this.props.location.pathname
+      });
       this.refs.scrollReveal.init();
     }
   }

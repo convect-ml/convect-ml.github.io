@@ -48,7 +48,7 @@ class Cta extends React.Component {
     );
 
     const trackClickTryConvectInCta = () => {
-      Mixpanel.track('clickTryConvectInCta');
+      Mixpanel.track('click try convect', { source: 'cta' });
     }
 
     return (
